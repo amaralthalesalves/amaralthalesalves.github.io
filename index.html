@@ -16,7 +16,7 @@
   <link rel="icon" href="assets/img/pfp.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=IBM+Plex+Mono:wght@400;500&family=Press+Start+2P&display=swap">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -29,7 +29,10 @@
       <button type="button" data-lang="en" aria-pressed="false">EN</button>
     </div>
     <div class="id">
-      <img class="avatar" src="assets/img/pfp.jpeg" data-i18n-alt="alt" alt="Foto de Thales Amaral" width="144" height="144">
+      <button class="avatar-btn" type="button" id="avatar-btn">
+        <img class="avatar" id="avatar" src="assets/img/pfp.jpeg" data-i18n-alt="alt" alt="Foto de Thales Amaral" width="144" height="144">
+        <span class="xp" id="xp" hidden><span class="xp__fill" id="xp-fill"></span></span>
+      </button>
       <div class="id__text">
         <h1>Thales Amaral</h1>
         <p class="role" data-i18n="role">Engenheiro de IA &amp; Dados</p>
@@ -174,6 +177,8 @@
     <p class="copy">© 2026 Thales Amaral</p>
   </footer>
 </main>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/easter-egg.js"></script>
 </body>
 </html>

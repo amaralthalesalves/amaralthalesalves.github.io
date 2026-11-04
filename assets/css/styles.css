@@ -225,3 +225,74 @@ body::after {
   * { transition: none !important; }
   .card:hover, .award:hover { transform: none; }
 }
+
+/* ---------- easter egg: clicar na foto ---------- */
+[hidden] { display: none !important; }
+:root { --f-pixel: "Press Start 2P", ui-monospace, monospace; }
+
+.avatar-btn {
+  position: relative;
+  flex: none;
+  padding: 0; border: 0; background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.avatar-btn .avatar { display: block; }
+.avatar-btn.hop { animation: hop .38s cubic-bezier(.3, .7, .4, 1); }
+@keyframes hop {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-14px); }
+  70% { transform: translateY(2px); }
+}
+
+.xp-float {
+  position: absolute; top: -.2rem;
+  transform: translateX(-50%);
+  font: 400 .62rem/1 var(--f-pixel);
+  color: var(--gold);
+  text-shadow: 2px 2px 0 var(--card);
+  pointer-events: none;
+  white-space: nowrap;
+  animation: xp-up .9s ease-out forwards;
+}
+@keyframes xp-up {
+  from { opacity: 1; translate: 0 0; }
+  to   { opacity: 0; translate: 0 -2.6rem; }
+}
+
+.xp {
+  position: absolute; left: 10px; right: 10px; bottom: -14px;
+  height: 9px;
+  background: var(--card);
+  border: 2px solid var(--ink);
+}
+.xp__fill { display: block; height: 100%; width: 0; background: var(--green); transition: width .25s steps(4); }
+.xp--full .xp__fill { background: var(--gold); }
+.xp { transition: opacity .5s ease; }
+.xp--out { opacity: 0; }
+
+.toast {
+  position: fixed; z-index: 20;
+  right: calc(16px + env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  width: min(21rem, calc(100vw - 32px));
+  display: flex; align-items: center; gap: .9rem;
+  padding: .8rem 1rem;
+  background: var(--ink);
+  color: var(--card);
+  border: 2px solid var(--gold);
+  box-shadow: 5px 5px 0 var(--shadow);
+}
+.toast--in { animation: toast-in .35s cubic-bezier(.2, .8, .3, 1); }
+@keyframes toast-in { from { transform: translateY(120%); opacity: 0; } to { transform: none; opacity: 1; } }
+.toast__icon { width: 2.4rem; height: 2.4rem; flex: none; fill: var(--gold); }
+.toast__body { display: grid; gap: .2rem; min-width: 0; }
+.toast__kicker { font: 400 .55rem/1.4 var(--f-pixel); color: var(--gold); text-transform: uppercase; }
+.toast__title { font-weight: 700; font-size: var(--t-md); line-height: 1.2; }
+.toast__desc { font-size: var(--t-sm); opacity: .78; }
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-btn.hop, .xp-float, .toast--in { animation: none; }
+  .xp-float { display: none; }
+}
