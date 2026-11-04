@@ -395,3 +395,48 @@ html.aero .toast {
   box-shadow: 0 10px 30px rgba(10, 60, 120, .45), inset 0 1px 0 rgba(255, 255, 255, .7);
 }
 html.aero .toast__kicker, html.aero .toast__icon { color: #CFF3FF; fill: #CFF3FF; }
+
+/* ---------- índice ----------
+   Telas estreitas: linha numerada no fim do cabeçalho.
+   Telas largas (≥1240px): trilho fixo na margem esquerda, com a seção atual marcada. */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+.block, .foot { scroll-margin-top: 1.5rem; }
+
+.toc {
+  display: flex; flex-wrap: wrap;
+  gap: .35rem 1.4rem;
+  padding-top: .9rem;
+  border-top: 2px dotted var(--line);
+  font: 500 var(--t-xs)/1.4 var(--f-mono);
+  letter-spacing: .03em;
+}
+.toc a { color: var(--muted); text-decoration: none; display: inline-flex; align-items: baseline; gap: .45rem; }
+.toc b { font-weight: 500; color: var(--green); }
+.toc a:hover, .toc a[aria-current="true"] { color: var(--ink); }
+.toc a:hover span { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (min-width: 1240px) {
+  .toc {
+    position: fixed; z-index: 2;
+    top: 3rem;
+    left: max(16px, calc(50% - 27rem - 10.5rem));
+    width: 9rem;
+    flex-direction: column; flex-wrap: nowrap;
+    gap: .7rem;
+    padding: 0; border: 0;
+  }
+  .toc a { gap: .55rem; }
+  /* traço entre número e nome: cresce na seção atual */
+  .toc a::before {
+    content: ""; order: 1; flex: none;
+    width: .8rem; height: 0;
+    border-bottom: 2px solid var(--line);
+    transform: translateY(-.3em);
+    transition: width .25s ease, border-color .25s ease;
+  }
+  .toc span { order: 2; }
+  .toc a[aria-current="true"]::before { width: 1.8rem; border-color: var(--green); }
+  .toc a:hover::before { border-color: var(--muted); }
+}
+@media (min-width: 1240px) and (prefers-reduced-motion: reduce) { .toc a::before { transition: none; } }

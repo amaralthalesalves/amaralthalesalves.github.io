@@ -69,6 +69,7 @@
 
     alt: "Photo of Thales Amaral",
     contact: "Contact",
+    toc: "Contents",
     cv_pdf: "Résumé (PDF, Portuguese)"
   };
   var META_EN = "Thales Amaral, AI and data engineer. R&D at SPEED Lab (DCC/UFMG) and Computer Science student at UFMG.";
