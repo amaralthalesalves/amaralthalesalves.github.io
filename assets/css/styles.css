@@ -296,3 +296,102 @@ body::after {
   .avatar-btn.hop, .xp-float, .toast--in { animation: none; }
   .xp-float { display: none; }
 }
+
+/* ---------- easter egg: modo Frutiger Aero ---------- */
+.secret {
+  font: 400 .68rem/1 var(--f-mono);
+  letter-spacing: .04em;
+  color: var(--muted);
+  opacity: .6;
+  background: none; border: 0; padding: .2rem .3rem;
+  cursor: pointer;
+}
+.secret:hover { opacity: 1; text-decoration: underline; }
+
+html.aero {
+  --paper:  #DDF3FF;
+  --card:   rgba(255, 255, 255, .55);
+  --ink:    #0B3A63;
+  --muted:  #3B6A8F;
+  --line:   rgba(11, 58, 99, .22);
+  --shadow: rgba(20, 100, 180, .22);
+  --green:  #1F9A3E;
+  --green-shadow: rgba(31, 154, 62, .28);
+  --gold:   #1C8FD6;
+  --f-serif: "Segoe UI", "Frutiger", "Myriad Pro", "Helvetica Neue", Arial, sans-serif;
+}
+html.aero body {
+  background:
+    radial-gradient(60% 40% at 80% 8%, rgba(255, 255, 255, .85), transparent 70%),
+    linear-gradient(180deg, #1E8FE0 0%, #6CC8F5 30%, #D6F2FF 58%, #B5E87C 80%, #46AE33 100%) fixed;
+}
+html.aero body::after, html.aero .intro::before { display: none; }
+
+html.aero h1, html.aero h2 { color: #0A4C86; text-shadow: 0 1px 0 #fff, 0 0 18px rgba(255, 255, 255, .9); }
+
+html.aero .card, html.aero .award {
+  position: relative; overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .95);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .82), rgba(255, 255, 255, .42));
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  backdrop-filter: blur(12px) saturate(1.4);
+  box-shadow: 0 10px 28px rgba(20, 90, 160, .25), inset 0 1px 0 #fff;
+}
+html.aero .card::before, html.aero .award::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 46%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .75), rgba(255, 255, 255, 0));
+  border-radius: 16px 16px 60% 60% / 16px 16px 26px 26px;
+  pointer-events: none;
+}
+html.aero .card > *, html.aero .award > * { position: relative; z-index: 1; }
+html.aero .card--edu { box-shadow: 0 10px 28px rgba(20, 90, 160, .25), 0 0 0 3px rgba(120, 220, 120, .45), inset 0 1px 0 #fff; }
+@media (hover: hover) {
+  html.aero .card:hover, html.aero .award:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(20, 90, 160, .32), inset 0 1px 0 #fff; }
+}
+
+html.aero .tag, html.aero .tag--done {
+  color: #fff; border: 0;
+  background: linear-gradient(180deg, #9BE58A 0%, #3DBA4E 50%, #22973A 51%, #45C25A 100%);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+}
+html.aero .chips li {
+  border-radius: 99px; border: 1px solid #fff;
+  background: linear-gradient(180deg, #fff, #CFEFFF);
+  box-shadow: 0 2px 6px rgba(20, 90, 160, .18);
+}
+html.aero .avatar { border-radius: 18px; box-shadow: 0 0 0 3px #fff, 0 10px 30px rgba(20, 90, 160, .4); }
+html.aero .lang { border-color: #fff; background: rgba(255, 255, 255, .6); }
+html.aero .lang button[aria-pressed="true"], html.aero .icons a {
+  color: #fff;
+  background: linear-gradient(180deg, #8FDCFF 0%, #2A9DEB 50%, #0A72C6 51%, #36B0F2 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), 0 2px 6px rgba(10, 80, 160, .35);
+}
+html.aero .icons a:hover { background: linear-gradient(180deg, #B4F08F 0%, #4CC24C 50%, #26A132 51%, #5BD25B 100%); }
+html.aero .skills dt { color: #1474BE; }
+html.aero .points li::marker { color: #1C8FD6; }
+
+.aero-bubbles { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.aero-bubbles span {
+  position: absolute; bottom: -100px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .75);
+  background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, .95) 0 8%, rgba(255, 255, 255, .25) 22%, rgba(140, 210, 255, .12) 60%, rgba(255, 255, 255, .45) 100%);
+  animation: bubble-rise linear infinite;
+}
+@keyframes bubble-rise {
+  from { transform: translate(0, 0); }
+  50%  { transform: translate(24px, -55vh); }
+  to   { transform: translate(-12px, -115vh); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aero-bubbles span { animation: none; bottom: auto; top: calc(var(--y, 50) * 1%); }
+}
+html.aero .toast {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .8);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(60, 160, 230, .95) 0%, rgba(14, 92, 170, .95) 50%, rgba(8, 70, 140, .95) 51%, rgba(30, 120, 200, .95) 100%);
+  box-shadow: 0 10px 30px rgba(10, 60, 120, .45), inset 0 1px 0 rgba(255, 255, 255, .7);
+}
+html.aero .toast__kicker, html.aero .toast__icon { color: #CFF3FF; fill: #CFF3FF; }
