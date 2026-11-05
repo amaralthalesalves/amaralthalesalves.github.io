@@ -1,3 +1,3 @@
 # Thales Amaral
 
-Portfólio pessoal: **[amaralthalesalves.github.io](https://amaralthalesalves.github.io)**
+Portfólio pessoal: **[thalesamaral.tech](https://thalesamaral.tech)**
