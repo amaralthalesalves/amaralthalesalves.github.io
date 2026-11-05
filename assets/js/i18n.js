@@ -31,7 +31,8 @@
     d_ml: "Oct 2026 – present",
 
     exp: "Experience",
-    cv: "Full résumé (PT)",
+    cv: "Full résumé",
+    cv_href: "assets/cv/thales-amaral-resume-en.pdf",
     speed_d: "Research and development, Embrapii grant",
     speed_r: "Software Engineer (R&amp;D)",
     d_speed: "Nov 2026 – present",
@@ -70,7 +71,7 @@
     alt: "Photo of Thales Amaral",
     contact: "Contact",
     toc: "Contents",
-    cv_pdf: "Résumé (PDF, Portuguese)"
+    cv_pdf: "Résumé (PDF)"
   };
   var META_EN = "Thales Amaral, AI and data engineer. R&D at SPEED Lab (DCC/UFMG) and Computer Science student at UFMG.";
 
@@ -79,12 +80,14 @@
   var nodes = document.querySelectorAll("[data-i18n]");
   var labels = document.querySelectorAll("[data-i18n-label]");
   var alts = document.querySelectorAll("[data-i18n-alt]");
+  var hrefs = document.querySelectorAll("[data-i18n-href]");
   var buttons = document.querySelectorAll(".lang button");
 
   // guarda o português original de cada elemento
   nodes.forEach(function (el) { el._pt = el.innerHTML; });
   labels.forEach(function (el) { el._pt = [el.getAttribute("aria-label"), el.getAttribute("title")]; });
   alts.forEach(function (el) { el._pt = el.getAttribute("alt"); });
+  hrefs.forEach(function (el) { el._ptHref = el.getAttribute("href"); });
   var metaPt = meta ? meta.getAttribute("content") : "";
 
   function apply(lang) {
@@ -100,6 +103,9 @@
     });
     alts.forEach(function (el) {
       el.setAttribute("alt", en ? EN[el.getAttribute("data-i18n-alt")] : el._pt);
+    });
+    hrefs.forEach(function (el) {
+      el.setAttribute("href", en ? EN[el.getAttribute("data-i18n-href")] : el._ptHref);
     });
     if (meta) meta.setAttribute("content", en ? META_EN : metaPt);
     root.setAttribute("lang", en ? "en" : "pt-BR");

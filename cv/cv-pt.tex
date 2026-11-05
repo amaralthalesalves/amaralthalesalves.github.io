@@ -1,0 +1,166 @@
+% Currículo em português. Gera assets/cv/thales-amaral-cv-pt.pdf (ver build.sh)
+\documentclass[10pt,a4paper]{article}
+\input{preamble}
+\hypersetup{
+    pdftitle={Thales Amaral - Currículo},
+    pdfauthor={Thales Amaral},
+    pdfsubject={Engenheiro de IA e Dados},
+    pdfkeywords={IA, LLM, RAG, MCP, Python, FastAPI, Airflow, Engenharia de Dados, Machine Learning}
+}
+
+\begin{document}
+
+% ================================================================
+% CABEÇALHO
+% ================================================================
+
+\begin{center}
+    {\Large\bfseries Thales A. Amaral}\\[2pt]
+    Engenheiro de IA e Dados\\[3pt]
+
+    Belo Horizonte, MG
+    \quad | \quad
+    (37) 98815-1628
+    \quad | \quad
+    \href{mailto:amaralthalesalves@gmail.com}{amaralthalesalves@gmail.com}\\[2pt]
+
+    \href{https://thalesamaral.tech}{thalesamaral.tech}
+    \quad | \quad
+    \href{https://www.linkedin.com/in/amaralthalesalves/}{linkedin.com/in/amaralthalesalves}
+    \quad | \quad
+    \href{https://github.com/amaralthalesalves}{github.com/amaralthalesalves}
+\end{center}
+
+% ================================================================
+\section*{Resumo}
+
+Engenheiro de software em P\&D no SPEED Lab (DCC/UFMG) e estudante de Ciência da Computação na UFMG.
+Experiência com agentes de IA, LLMs (RAG, MCP, tool calling), pipelines de dados e observabilidade em Azure.
+
+% ================================================================
+\section*{Experiência Profissional}
+
+\entry
+{Engenheiro de Software (P\&D)}
+{Nov. 2026 -- Presente}
+{SPEED Lab -- Departamento de Ciência da Computação (DCC), UFMG}
+{Belo Horizonte, MG}
+
+\begin{itemize}
+    \item Pesquisa e desenvolvimento de software com bolsa Embrapii.
+\end{itemize}
+
+\entry
+{Estagiário em Engenharia de Dados e IA}
+{Out. 2025 -- Out. 2026}
+{Rehagro}
+{Belo Horizonte, MG}
+
+\begin{itemize}
+
+    \item Automatizei a \textbf{transcrição e classificação de mais de 1.000 vídeos
+    educacionais} com um pipeline em \textbf{Python, OpenAI Whisper e Apache Airflow},
+    integrado aos bancos \textbf{PostgreSQL} internos.
+
+    \item Implementei o \textbf{monitoramento de cerca de 80 máquinas virtuais Azure} com
+    \textbf{Grafana e Prometheus}, apoiando análises de consumo, desempenho e custos de infraestrutura.
+
+    \item Tornei dados de \textbf{VMs, custos e rede consultáveis em linguagem natural} com um \textbf{agente LLM com tool calling}.
+
+    \item Estruturei o \textbf{catálogo de metadados} dos principais bancos corporativos,
+    documentando regras de negócio, granularidade e cardinalidade, em uma aplicação
+    \textbf{React/FastAPI integrada a um agente de IA}.
+
+    \item Desenvolvi soluções com \textbf{RAG, MCP e avaliação de modelos}, dos requisitos com as áreas de negócio à validação.
+
+    \item Integrei \textbf{agentes de IA, automações e APIs REST} à plataforma interna de Dados com \textbf{Laravel e React}.
+
+    \item Antes do estágio: Treinamento em Engenharia de Software na Rehagro (jun. -- set. 2025).
+
+\end{itemize}
+
+\entry
+{Técnico de Suporte em TI}
+{Out. 2023 -- Set. 2024}
+{Departamento de Toxicologia -- Universidade Federal de São João del-Rei (UFSJ)}
+{Divinópolis, MG}
+
+\begin{itemize}
+
+    \item Mantive a \textbf{infraestrutura de TI de pesquisadores e laboratórios}, solucionando problemas de software, hardware e rede.
+
+\end{itemize}
+
+% ================================================================
+\section*{Formação Acadêmica}
+
+\entry
+{Bacharelado em Ciência da Computação}
+{Mar. 2025 -- 2029 (previsão)}
+{Universidade Federal de Minas Gerais (UFMG)}
+{Belo Horizonte, MG}
+
+\begin{itemize}
+    \item Disciplinas: Estruturas de Dados, Algoritmos, Bancos de Dados, Matemática Discreta e Probabilidade.
+\end{itemize}
+
+\entry
+{Técnico em Informática Integrado ao Ensino Médio}
+{Mar. 2022 -- Dez. 2024}
+{Centro Federal de Educação Tecnológica de Minas Gerais (CEFET-MG)}
+{Divinópolis, MG}
+
+\begin{itemize}
+    \item Desenvolvimento de software, bancos de dados, redes e sistemas computacionais. Representante de classe em 2022.
+\end{itemize}
+
+% ================================================================
+\section*{Pesquisa e Projetos}
+
+\entry
+{Pesquisador Júnior -- Análise de Dados de Apreensões de Drogas Ilícitas}
+{Jan. 2023 -- Dez. 2024}
+{CEFET-MG, em parceria com UFSJ e Polícia Militar de Minas Gerais (PMMG)}
+{Divinópolis, MG}
+
+\begin{itemize}
+
+    \item Estruturei e analisei dados de \textbf{apreensões de drogas, sistema prisional e informações
+    geoespaciais} em \textbf{Python}, resultando em \textbf{artigo publicado}. Bolsa de Iniciação Científica
+    \textbf{FAPEMIG} (out. 2023 -- set. 2024).
+
+\end{itemize}
+
+\entry
+{FruitAdvisor -- Trabalho de Conclusão de Curso}
+{2024}
+{CEFET-MG}
+{Divinópolis, MG}
+
+\begin{itemize}
+
+    \item Aplicativo mobile de \textbf{reconhecimento de frutas por imagem} com \textbf{Flutter} e uma \textbf{rede neural convolucional (CNN)}, exibindo informações nutricionais.
+
+\end{itemize}
+
+% ================================================================
+\section*{Competências Técnicas}
+
+\textbf{IA e Dados:}
+LLMs, RAG, MCP, Tool Calling, Avaliação de Modelos, Machine Learning, OpenAI API, Whisper,
+Airflow, PostgreSQL, MySQL\\
+\textbf{Backend e Web:}
+FastAPI, React, Node.js, Laravel, APIs REST\\
+\textbf{Infraestrutura e Ferramentas:}
+Azure, Docker, Grafana, Prometheus, Git, Linux, Shell\\
+\textbf{Linguagens:}
+Python, C, C++, Java, JavaScript, Dart, SQL, HTML, CSS
+
+% ================================================================
+\section*{Idiomas, Cursos e Prêmios}
+
+\textbf{Machine Learning Specialization} -- DeepLearning.AI e Stanford Online (Coursera), Out. 2026 -- em andamento\\
+\textbf{Inglês C1 (proficiência profissional plena)} -- Cambridge English Certification, pontuação \textbf{181/190}; Português nativo\\
+\textbf{Medalha de Ouro} -- Olimpíada Nacional de Ciências (ONC), 2022
+
+\end{document}
