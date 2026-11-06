@@ -19,6 +19,7 @@
     chips: "<li>Data Structures</li><li>Algorithms</li><li>Databases</li><li>Discrete Mathematics</li><li>Probability</li>",
     tec: "Computer Technician, integrated with high school",
     d_cefet: "Mar 2022 – Dec 2024",
+    chips_cefet: "<li>Programming Fundamentals</li><li>Computer Networks</li><li>Computer Architecture</li><li>Object-Oriented Programming</li>",
     cap: "Capstone project",
     tcc: "<strong>FruitAdvisor</strong>: Flutter app that recognizes fruits from a photo using a convolutional neural network and shows their nutritional information.",
     rep_h: "Student representation",
