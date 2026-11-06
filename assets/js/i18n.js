@@ -32,6 +32,7 @@
 
     exp: "Experience",
     cv: "Full résumé",
+    current: "current",
     cv_href: "assets/cv/thales-amaral-resume-en.pdf",
     speed_d: "Research and development, Embrapii grant",
     speed_r: "Software Engineer (R&amp;D)",
@@ -54,6 +55,11 @@
     ufsj_d: "IT infrastructure for researchers and laboratories",
     ufsj_r: "IT Support Technician",
     d_ufsj: "Oct 2023 – Sep 2024",
+
+    proj: "Projects",
+    wip: "work in progress",
+    ath_d: "Protection platform for women facing domestic violence: an app with a panic button and a support network, and a dashboard for the team to follow cases, protective orders and alerts.",
+    dcchub_d: "Independent hub for DCC/UFMG students: anonymous reviews of professors and courses, a schedule builder, past exams and research and internship opportunities.",
 
     skills: "Skills",
     s_ai: "AI &amp; data",
